@@ -13,8 +13,7 @@ model = make_pipeline(TfidfVectorizer(), MultinomialNB())
 model.fit(train.data, train.target)
 
 from joblib import dump
-dump(model, 'chatgroup.model')
-dump(train, 'train.model')
+dump(model, './myapp/staic/chatgroup.model')
+dump(train, './myapp/staic/train.model')
 
 print(round((model.score(train.data, train.target)*100),2),'%')
-
