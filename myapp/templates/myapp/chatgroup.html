@@ -60,7 +60,7 @@
 
         .testimonial-section .sec-title{
             position: relative;
-            margin-bottom: 115px;
+            margin-bottom: 0px;
         }
 
         .testimonial-section .sec-title .title{
@@ -213,21 +213,37 @@
 		<div class="large-container">
 			<div class="sec-title">
 				<span class="title">DJANGO</span>
-				<h2>DATASCIENCE PROJECT</h2>
-      </div>
+                <h2>DATASCIENCE PROJECT</h2>
+                <h6>Example</h6>
+
+                <h6>comp.os.ms-windows.misc</h6>
+                <span> - There is a program called true-effects for windows, that allows you to define attributes for true-type fonts, 
+                    and have them look like new fonts.</span>
+    
+                <h6>comp.graphics</h6>
+                <span> - I am writing some utilies to convert Regis and Tektonic esacpe sequences  into some useful formats.</span>
+
+                <h6>sci.space</h6>
+                <span> - How difficult would it be to set up your own ground station?</span>
+                
+            </div>
       
-      <form role="form" action="/chatgroup" method="POST">
-        {% csrf_token %}
 			<div class="testimonial-carousel owl-carousel owl-theme">
 				<div class="testimonial-block">
 					<div class="inner-box">
 						<div class="text">
-              <h3>บทสนทนา</h3>
-              <textarea name="data" id="" cols="30" rows="5" class="form-control"></textarea>
-            </div>
-            <div class="form-group">
-              <input type="submit" name="submit" class="btn btn-info btn-md" value="submit"><br/><br/>
-            </div>
+                            <h3>บทสนทนา</h3>
+                            <form action="/chatgroup" method="post">
+                                {% csrf_token %}
+                                <textarea name="data" id="" cols="30" rows="5" class="form-control"></textarea><br>
+                                <button type="submit" class="btn btn-info btn-md">submit</button>
+                            </form>
+                            <!-- <textarea name="data" id="" cols="30" rows="5"  class="form-control" value="{{ data }}"></textarea> -->
+                            <br>
+                        
+                            <!-- <input type="submit" name="submit" class="btn btn-info btn-md" value="submit"><br/><br/> -->
+
+                        </div>
 						<div class="info-box">
 							<div class="thumb"><img src="https://www.nivtindia.com/wp-content/uploads/2019/10/data-science.png" alt=""></div>
 							<h4 class="name">Classification : {{ result }}</h4>
@@ -235,9 +251,10 @@
 						</div>
 					</div>
 				</div>
-      </div>
+            </div>
+      </form>
       
-		</div>
+
 	</section>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.0/owl.carousel.js"></script>
     <script>

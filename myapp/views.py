@@ -16,9 +16,10 @@ def chatgroup(req):
         #print(req.POST)
         data = str(req.POST['data'])
 
-
         train = load('./myapp/static/train.model')
         model = load('./myapp/static/chatgroup.model')
+
+        print(data)
         
         def predict_category(s, train=train, model=model):
             pred = model.predict([s])
